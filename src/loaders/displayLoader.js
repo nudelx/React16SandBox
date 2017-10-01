@@ -22,7 +22,7 @@ class Display extends Component {
   }
 
   render() {
-    const { children, page } = this.props;
+    const { children } = this.props;
     return (
       <div className={"monitor"}>
         <div className={"screen"}>

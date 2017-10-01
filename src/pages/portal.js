@@ -5,7 +5,7 @@ import quotes from "../loaders/yodaQuotes";
 class Portal extends Component {
   constructor(props) {
     super(props);
-    this.state = { portal: false, target: "body" };
+    this.state = { portal: false, target: "td#here" };
   }
 
   setPortal = () => {
@@ -30,7 +30,6 @@ class Portal extends Component {
         <div>
           <div className="yoda" />
           <div className="quote">
-            {" "}
             {quotes[Math.floor(Math.random() * 10) + 0]}
           </div>
         </div>
@@ -38,15 +37,13 @@ class Portal extends Component {
           onClick={this.setPortal}
           className={"btn btn-warning btn-lg btn-block"}
         >
-          {" "}
-          Open Portal
+          {"Open Portal"}
         </button>
         <button
           onClick={this.unsetPortal}
           className={"btn btn-info btn-lg btn-block"}
         >
-          {" "}
-          Close React
+          {"Close Portal"}
         </button>
       </div>
     );

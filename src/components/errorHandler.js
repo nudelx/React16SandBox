@@ -9,17 +9,21 @@ class ErrorHandler extends Component {
   }
 
   componentDidCatch(error, info) {
-    console.log("error", error); //eslint-disable-line
-    console.log("error", info); //eslint-disable-line
-    alert(error)
-    alert(info)
-    this.setState({ hasError: true });
+    console.log("error", error); // eslint-disable-line
+    console.log("error", info); // eslint-disable-line
+    debugger
+    this.setState({ hasError: true, error, info });
   }
 
   render() {
-    console.log("erro render");
     if (this.state.hasError) {
-      return <div>Alex: WE HAVE AN ERROR !!!!! YEA !!!!</div>;
+      return (
+        <div>
+          <div class="alert alert-danger" role="alert">
+            <strong>Oh snap!</strong> WE HAVE the ERROR !!!!! YEAH !!!!
+          </div>
+        </div>
+      );
     }
     return this.props.children;
   }

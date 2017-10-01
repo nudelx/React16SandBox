@@ -10,7 +10,7 @@ const Error = ({ onClick, doError }) => {
     <div className={"errorCard"}>
       <div>
         <button onClick={someOnClick} className="btn btn-danger customError">
-          Make me an Error
+          `Make me an Error ${doError.is}`
         </button>
       </div>
     </div>

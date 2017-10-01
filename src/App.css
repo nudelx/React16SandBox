@@ -97,6 +97,7 @@
   width: 580px;
   font-size: 32px;
   font-family: fantasy;
+  text-align: center;
 }
 
 @keyframes App-logo-spin {

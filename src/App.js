@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import Navigator from "./components/navigator";
 import Display from "./loaders/displayLoader";
@@ -19,6 +18,7 @@ class App extends Component {
   };
 
   render() {
+    console.log('app-state', this.state)
     const pageToRender = content[this.state.page] || null;
     return (
       <div className="App">
