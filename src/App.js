@@ -1,40 +1,37 @@
-import React, { Component } from 'react';
-import logo from './logo.svg'
-import './App.css';
-import Navigator from './navigator.js';
-import Display from './displayLoader'
-import content from './content'
+import React, { Component } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import Navigator from "./components/navigator";
+import Display from "./loaders/displayLoader";
+import content from "./pages/content";
+import ErrorHandler from "./components/errorHandler";
 
 class App extends Component {
-
-  constructor (props) {
-    super(props)
+  constructor(props) {
+    super(props);
     this.state = {
       page: null
-    }
+    };
   }
 
-  setPage = (e) => {
-    this.setState({page: e.target.id.toLowerCase()})
-  }
+  setPage = e => {
+    this.setState({ page: e.target.id.toLowerCase() });
+  };
 
   render() {
-    const pageToRender = content[this.state.page] || null
+    const pageToRender = content[this.state.page] || null;
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <div className="App-intro">
-          <Navigator onClick={this.setPage}/>
-        </div>
-
-        <div className={'display'}>
+        <ErrorHandler>
+          <header className="App-header">
+            <Navigator onClick={this.setPage} />
+          </header>
+          <div className={"display"}>
             <Display page={this.state.page}>
-              <div>{ pageToRender && pageToRender() }</div>
+              <div>{pageToRender && pageToRender()}</div>
             </Display>
-        </div>
+          </div>
+        </ErrorHandler>
       </div>
     );
   }
