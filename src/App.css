@@ -1,0 +1,105 @@
+.App {
+  text-align: center;
+  background: #545454;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.buttonsList {
+  list-style: none;
+  padding: 0px;
+  margin: 30px 0px 30px 0px;
+
+}
+
+.buttonsList li {
+  display: inline-block;
+}
+
+.buttonsList a {
+  margin-right: 5px;
+  min-width: 100px;
+}
+
+.monitor {
+  position: relative;
+  display: inline-block;
+  margin: auto;
+  background-image: url(../src/monitor.png);
+  background-repeat: no-repeat;
+  height: 919px;
+  width: 1123px;
+}
+
+.screen{
+  position: absolute;
+  border: 1px solid green;
+  top: 41px;
+  left: 47px;
+  width: 1032px;
+  height: 588px;
+  background-color: #002933;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: normal;
+  font-family: monospace;
+  color: white;
+  text-align: left;
+  padding: 15px;
+  outline: none;
+}
+
+.animateScreen-out{
+  opacity: 0.0
+}
+
+.animateScreen-in {
+  transition:2s;
+  opacity: 1;
+}
+.cardPortal {
+  border: 2px solid black;
+  background-color: rgba(240, 248, 255, 0);
+  border-radius: 10px;
+  width: 1000px;
+}
+
+.yoda {
+  display: inline-block;
+  background-image: url(../src/Yoda.png);
+  width: 405px;
+  height: 282px;
+  background-repeat: no-repeat;
+}
+
+.quote{
+  margin-top: 30px;
+  display: inline-block;
+  vertical-align: top;
+  width: 580px;
+  font-size: 32px;
+  font-family: fantasy;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
