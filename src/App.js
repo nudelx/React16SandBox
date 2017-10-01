@@ -19,8 +19,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(content)
-    console.log(this.state)
     const pageToRender = content[this.state.page] || null
     return (
       <div className="App">
