@@ -3,7 +3,9 @@ import './App.css'
 import Navigator from './components/navigator'
 import Display from './loaders/displayLoader'
 import content from './pages/content'
+import Welcome from './pages/welcome'
 import ErrorHandler from './components/errorHandler'
+import Header from './components/header'
 
 class App extends Component {
   constructor(props) {
@@ -23,12 +25,12 @@ class App extends Component {
     return (
       <div className="App">
         <ErrorHandler>
-          <header className="App-header">
+          <Header>
             <Navigator onClick={this.setPage} />
-          </header>
+          </Header>
           <div className={'display'}>
             <Display page={this.state.page}>
-              <div>{pageToRender && pageToRender()}</div>
+              <div>{pageToRender ? pageToRender() : <Welcome />}</div>
             </Display>
           </div>
         </ErrorHandler>

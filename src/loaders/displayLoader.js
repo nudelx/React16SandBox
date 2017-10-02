@@ -8,6 +8,12 @@ class Display extends Component {
     }
   }
 
+  componentWillMount () {
+    setTimeout(() => {
+      this.setState({ animation: true })
+    }, 10)
+  }
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.page !== this.props.page) {
       this.setState({ animation: false })

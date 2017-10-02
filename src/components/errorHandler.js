@@ -19,7 +19,7 @@ class ErrorHandler extends Component {
     if (this.state.hasError) {
       return (
         <div>
-          <div class="alert alert-danger" role="alert">
+          <div className="alert alert-danger" role="alert">
             <strong>Oh snap!</strong> WE HAVE the ERROR !!!!! YEAH !!!!
           </div>
         </div>

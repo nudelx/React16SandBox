@@ -1,8 +1,8 @@
 import React from 'react'
 
+let error = {}
 const someOnClick = () => {
-  const obj = {}
-  const a = obj.test.id
+  error.doError = true
 }
 
 const Error = ({ onClick, doError }) => {
@@ -10,7 +10,8 @@ const Error = ({ onClick, doError }) => {
     <div className={'errorCard'}>
       <div>
         <button onClick={someOnClick} className="btn btn-danger customError">
-          `Make me an Error ${doError.is}`
+          {'Make me an Error'}
+          {error.doError && error.error.id}
         </button>
       </div>
     </div>
