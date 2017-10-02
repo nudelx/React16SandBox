@@ -1,6 +1,6 @@
 const Pages = {
-  PORTAL: "portal",
-  ERROR: "error"
-};
+  PORTAL: 'portal',
+  ERROR: 'error'
+}
 
-export default Pages;
+export default Pages

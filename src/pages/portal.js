@@ -1,28 +1,28 @@
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
-import quotes from "../loaders/yodaQuotes";
+import React, { Component } from 'react'
+import ReactDOM from 'react-dom'
+import quotes from '../loaders/yodaQuotes'
 
 class Portal extends Component {
   constructor(props) {
-    super(props);
-    this.state = { portal: false, target: "td#here" };
+    super(props)
+    this.state = { portal: false, target: 'body' }
   }
 
   setPortal = () => {
-    this.setState({ portal: true });
-  };
+    this.setState({ portal: true })
+  }
 
   unsetPortal = () => {
-    this.setState({ portal: false });
-  };
+    this.setState({ portal: false })
+  }
 
   renderInPortal = () => {
-    const { target } = this.state;
+    const { target } = this.state
     return ReactDOM.createPortal(
       this.renderCard(),
       document.querySelector(target)
-    );
-  };
+    )
+  }
 
   renderCard = () => {
     return (
@@ -35,25 +35,25 @@ class Portal extends Component {
         </div>
         <button
           onClick={this.setPortal}
-          className={"btn btn-warning btn-lg btn-block"}
+          className={'btn btn-warning btn-lg btn-block'}
         >
-          {"Open Portal"}
+          {'Open Portal'}
         </button>
         <button
           onClick={this.unsetPortal}
-          className={"btn btn-info btn-lg btn-block"}
+          className={'btn btn-info btn-lg btn-block'}
         >
-          {"Close Portal"}
+          {'Close Portal'}
         </button>
       </div>
-    );
-  };
+    )
+  }
 
   render() {
-    console.log("portal !!!");
-    const { portal } = this.state;
-    return <div>{portal ? this.renderInPortal() : this.renderCard()}</div>;
+    console.log('portal !!!')
+    const { portal } = this.state
+    return <div>{portal ? this.renderInPortal() : this.renderCard()}</div>
   }
 }
 
-export default Portal;
+export default Portal

@@ -1,42 +1,42 @@
-import React, { Component } from "react";
+import React, { Component } from 'react'
 
 class Display extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       animation: false
-    };
+    }
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.page !== this.props.page) {
-      this.setState({ animation: false });
+      this.setState({ animation: false })
       setTimeout(() => {
-        this.setState({ animation: true });
-      }, 10);
+        this.setState({ animation: true })
+      }, 10)
     }
   }
 
   componentWillUnmount() {
-    this.setState({ animation: false });
+    this.setState({ animation: false })
   }
 
   render() {
-    const { children } = this.props;
+    const { children } = this.props
     return (
-      <div className={"monitor"}>
-        <div className={"screen"}>
+      <div className={'monitor'}>
+        <div className={'screen'}>
           <div
             className={`animateScreen-out ${this.state.animation
-              ? "animateScreen-in"
-              : ""}`}
+              ? 'animateScreen-in'
+              : ''}`}
           >
             {children}
           </div>
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default Display;
+export default Display

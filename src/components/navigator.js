@@ -1,5 +1,5 @@
-import React from "react";
-import "../App.css";
+import React from 'react'
+import '../App.css'
 
 const Navigator = ({ onClick }) => {
   return (
@@ -27,7 +27,7 @@ const Navigator = ({ onClick }) => {
         </a>
       </li>
     </ul>
-  );
-};
+  )
+}
 
-export default Navigator;
+export default Navigator
