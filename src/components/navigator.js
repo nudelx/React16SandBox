@@ -1,30 +1,37 @@
 import React from 'react'
 import '../App.css'
+import ThemedButton from './themedButton';
+import ThemeTogglerButton from './themeTogglerButton';
 
 const Navigator = ({ onClick }) => {
   return (
     <ul className="buttonsList">
       <li>
-        <a
+        <ThemedButton
           className="btn btn-info"
           onClick={onClick}
           id="Portal"
-          href="#"
           role="button"
         >
           PORTAL
-        </a>
+        </ThemedButton>
       </li>
       <li>
-        <a
+        <ThemedButton
           className="btn btn-info"
           onClick={onClick}
           id="Error"
-          href="#"
           role="button"
         >
           Error
-        </a>
+        </ThemedButton>
+      </li>
+      <li>
+        <ThemeTogglerButton
+          className="btn btn-info"
+          id="ThemeToggler"
+          role="button"
+        />
       </li>
     </ul>
   )
