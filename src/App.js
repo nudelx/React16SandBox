@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import './App.css'
 import Navigator from './components/navigator'
 import Display from './loaders/displayLoader'
@@ -32,21 +32,29 @@ class App extends Component {
     this.setState({ page: e.target.id.toLowerCase() })
   }
 
+  renderApp () {
+    const pageToRender = content[this.state.page] || null
+    return (
+      <Fragment>
+        <Header>
+          <Navigator onClick={this.setPage} />
+        </Header>
+        <div className={'display'}>
+          <Display page={this.state.page}>
+            <div>{pageToRender ? pageToRender() : <Welcome />}</div>
+          </Display>
+        </div>
+      </Fragment>
+    )
+  }
+
   render() {
     console.log('app-state', this.state)
-    const pageToRender = content[this.state.page] || null
     return (
       <ThemeContext.Provider value={this.state}>
         <div className="App">
           <ErrorHandler>
-            <Header>
-              <Navigator onClick={this.setPage} />
-            </Header>
-            <div className={'display'}>
-              <Display page={this.state.page}>
-                <div>{pageToRender ? pageToRender() : <Welcome />}</div>
-              </Display>
-            </div>
+            {this.renderApp()}
           </ErrorHandler>
         </div>
       </ThemeContext.Provider>

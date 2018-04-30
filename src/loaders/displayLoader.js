@@ -5,29 +5,29 @@ class Display extends Component {
     animation: false
   }
 
-  componentWillMount () { // => componentDidMount
+  componentDidMount () { // => was componentWillMount
     setTimeout(() => {
       this.setState({ animation: true })
     }, 10)
   }
 
-  componentWillReceiveProps(nextProps) { // in this case use componentDidUpdate
-    if (nextProps.page !== this.props.page) {
-      this.setState({ animation: false })
-      setTimeout(() => {
-        this.setState({ animation: true })
-      }, 10)
-    }
-  }
-
-  // componentDidUpdate(prevProps, prevState) {
-  //   if (prevProps.page !== this.props.page) {
+  // componentWillReceiveProps(nextProps) { // in this case use componentDidUpdate
+  //   if (nextProps.page !== this.props.page) {
   //     this.setState({ animation: false })
   //     setTimeout(() => {
   //       this.setState({ animation: true })
   //     }, 10)
   //   }
   // }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.page !== this.props.page) {
+      this.setState({ animation: false })
+      setTimeout(() => {
+        this.setState({ animation: true })
+      }, 10)
+    }
+  }
 
   componentWillUnmount() { // => this is OK
     this.setState({ animation: false })
